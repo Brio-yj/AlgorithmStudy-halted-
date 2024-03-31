@@ -6,7 +6,7 @@ int main() {
     int n;
     cin >> n;
     while (n--) {
-        list<int> li;
+        list<char> li;
         auto it = li.begin();
         string s;
         cin >> s;
@@ -16,12 +16,13 @@ int main() {
             } else if (a == '>') {
                 if (it != li.end()) it++;
             } else if (a == '-') {
-                if (it != li.begin()) {
-                    it = li.erase(prev(it));
+                if(it!=li.begin()){
+                it--;
+                it=li.erase(it);
                 }
             } else {
                 li.insert(it, a);
-            }
+            }   
         }
         for (auto a : li) {
             cout << a;
